@@ -1,0 +1,85 @@
+DJ ANGO UNCHAINED 
+
+-creating things on a web server
+
+client side programming: Javascript, HTML5, CSS
+
+Webpage --> Webserver --> Application Server --> Database
+
+WEbpage --> Webserver is front end and writtenin Javascript, HTML5, and CSS
+Application Server --> Database are backend and they are wrote in Java and Python
+-------------------------------------------------------------------------------
+Two types of request: Get Request, Post Request ******
+
+Get Request; when a web page is loaded (stuff coming from the database)
+Post Request: updates a database
+
+Get Request goes downstream, from Database -----> Webpage
+Post Request goes upstream from Webpage  -------> Database
+---------------------------------------------------------------------------------
+
+Both front end and backend are developed in Django
+
+
+benefits: no need for local installs for each machine, no browser dependcenies, accessible from multiple platforms
+
+Django is a server-side web framework
+************************************************************************************
+WE ARE CREATING A Learning Log -- an online journal system that lets you keep track of the infomration you've learned
+
+models.py -- where we define all of our "tables" -- not tables, they are objects with attributes
+views.py -- interacts with the HTML and the database
+urls.py -- actual address location of the webpage location
+templates--
+************************************************
+CODE 
+
+pip install -r requirements.txt
+
+django-admin startproject learning_log .
+
+py manage.py migrate
+
+py manage.py runserver
+
+py manage.py startapp MainApp --> add MainApp to setting in log
+
+IN MODELS:------------
+class Topic(models.Model):
+    text = models.CharField(max_length=200)
+    date_added = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.text
+----------------------------
+
+py manage.py makemigrations
+
+py manage.py migrate
+
+py manage.py createsuperuser
+username: admin
+password: 1234 
+
+inside admin.py
+from .models import Topic
+
+admin.site.register(Topic)
+
+in the wepage add chess and rock climbing topics
+
+in models
+class Entry(models.Model):
+    topic = models.ForeignKey(Topic, on_delete=models.CASCADE)
+    text  = models.TextField()
+    date_added = models.DateTimeField(auto_now_add=True)
+
+
+
+When changes happen in models
+step 1) Make make Migration 
+step 2) migrate (admin.py)
+
+WILL NEED DBSQLITE
+
+import OS THEN import django
