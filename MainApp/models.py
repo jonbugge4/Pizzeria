@@ -9,7 +9,7 @@ class Pizza(models.Model):
 
 
 class Toppings(models.Model):
-    pizza = models.CharField(max_length=20)
+    pizza = models.ForeignKey(Pizza, on_delete=models.CASCADE)
     name = models.CharField(max_length=20)
 
     def __str__(self):
