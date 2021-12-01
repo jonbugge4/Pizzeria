@@ -53,9 +53,9 @@ class Topic(models.Model):
         return self.text
 ----------------------------
 
-py manage.py makemigrations
+python manage.py makemigrations
 
-py manage.py migrate
+python manage.py migrate
 
 py manage.py createsuperuser
 username: admin
@@ -83,3 +83,5 @@ step 2) migrate (admin.py)
 WILL NEED DBSQLITE
 
 import OS THEN import django
+
+#INDEX IS HOME PAGE
