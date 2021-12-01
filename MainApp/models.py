@@ -9,9 +9,10 @@ class Pizza(models.Model):
 
 
 class Toppings(models.Model):
-    types = models.CharField(max_length=20)
+    pizza = models.CharField(max_length=20)
+    name = models.CharField(max_length=20)
 
     def __str__(self):
-        return self.types
+        return self.pizza
 
 # Create your models here.
