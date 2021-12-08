@@ -38,7 +38,7 @@ pip install -r requirements.txt
 
 django-admin startproject learning_log .
 
-py manage.py migrate
+python manage.py migrate
 
 py manage.py runserver
 
