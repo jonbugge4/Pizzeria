@@ -11,11 +11,11 @@ def index(request):
     return render(request, 'MainApp/home.html')
 
 def pizzas(request):
-    pizza = Pizza.objects.order_by('date_added')
+    pizza = Pizza.objects.all().order_by('date_added')
 
     context = {'pizza': pizza}
 
-    return render(request, 'MainApp/home.html', context)
+    return render(request, 'MainApp/pizzas.html', context)
 
 def pizza(request, pizza_id):
     pizza = Pizza.objects.get(id = pizza_id)
@@ -24,7 +24,7 @@ def pizza(request, pizza_id):
     
     context = {'pizza':pizza}
 
-    return render(request, 'MainApp/home.html', context)
+    return render(request, 'MainApp/pizza.html', context)
 
 def new_comment(request, pizza_id):
     pizza = Pizza.objects.get(id = pizza_id)
