@@ -85,3 +85,11 @@ WILL NEED DBSQLITE
 import OS THEN import django
 
 #INDEX IS HOME PAGE
+
+
+<p>
+    <a href = "{% url 'MainApp:index' %}">pizzeria</a>
+    <a href = "{% url 'MainApp:pizzas' %}">Pizzas</a>
+</p>
+    {% block content %}
+    {% endblock content %}

@@ -8,7 +8,7 @@ from .forms import PizzaForm
 # Create your views here.
 
 def index(request): 
-    return render(request, 'MainApp/home.html')
+    return render(request, 'MainApp/index.html')
 
 def pizzas(request):
     pizza = Pizza.objects.all().order_by('date_added')
