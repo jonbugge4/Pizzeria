@@ -1,9 +1,15 @@
 {% extends "MainApp/base.html" %}
 
-{% block content %}
+{% block page_header %}
+  <div class="jumbotron">
+      <h1 class="display-3">Select a Pizza!</h1>
 
-<p>Victorino Pizza</p>
+      <p class="lead">Choose a pizza and view its toppings. Feel free to leave us a comment about our Pizzas!
+          We love feedback and appreciate your comments.
+      </p>
 
-<p>The Pizzeria helps you keep track of pizza types and their toppings!</p>
+      <a class="btn btn-lg btn-primary" href="{% url 'MainApp:pizzas' %}"
+        role="button">Pizzas &raquo;</a>
 
-{% endblock content %}
+  </div>
+{% endblock page_header %} 
