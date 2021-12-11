@@ -1,7 +1,7 @@
 from django.shortcuts import redirect, render
 
 
-from .models import Pizza, Toppings, Comment
+from .models import Pizza
 
 from .forms import PizzaForm
 
@@ -11,9 +11,9 @@ def index(request):
     return render(request, 'MainApp/index.html')
 
 def pizzas(request):
-    pizza = Pizza.objects.all().order_by('date_added')
+    pizzas = Pizza.objects.all().order_by('date_added')
 
-    context = {'pizza': pizza}
+    context = {'pizzas': pizzas}
 
     return render(request, 'MainApp/pizzas.html', context)
 
@@ -21,8 +21,8 @@ def pizza(request, pizza_id):
     pizza = Pizza.objects.get(id = pizza_id)
     toppings = pizza.toppings_set.all()
     context = {'pizza':pizza, 'toppings': toppings}
-    
-    context = {'pizza':pizza}
+    comments = pizza.comment_set.all()
+    context = {'pizza':pizza, 'toppings':toppings, 'comments':comments}
 
     return render(request, 'MainApp/pizza.html', context)
 

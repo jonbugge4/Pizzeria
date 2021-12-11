@@ -8,8 +8,8 @@ app_name = 'MainApp'
 urlpatterns = [
     path('',views.index, name='index'),
     path('pizzas',views.pizzas, name='pizzas'),
-    path('pizzas/<int:pizza_id>/', views.pizzas, name='pizzas'),
-    path('pizza',views.pizza, name='pizza'),
-    path('new_comment',views.new_comment, name='new_comment')
+    path('pizzas/<int:pizza_id>/', views.pizza, name='pizza'),
+    path('new_comment/<int:pizza_id>/',views.new_comment, name='new_comment')
 
 ]
+

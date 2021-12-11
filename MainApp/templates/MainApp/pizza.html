@@ -6,17 +6,17 @@
 
 {% block content %}
   <p>
-    <a href="{% url 'MainApp:new_comment' pizza.id %}">Add new entry</a>
+    <a href="{% url 'MainApp:new_comment' pizza.id %}">Add Comment</a>
   </p>
 
   <ul>
-  {% for entry in entries %}
+  {% for comment in comments %}
     <div class="card mb-3">
       <h4 class="card-header">
-        {{ entry.date_added|date:'M d, Y H:i' }}
+        {{ comment.date_added|date:'M d, Y H:i' }}
       </h4>
       <div class="card-body">
-        {{ entry.text|linebreaks }}
+        {{ comment.text|linebreaks }}
       </div>
     </div>
   {% empty %}
