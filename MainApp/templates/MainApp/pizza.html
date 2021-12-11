@@ -9,6 +9,11 @@
     <a href="{% url 'MainApp:new_comment' pizza.id %}">Add Comment</a>
   </p>
 
+
+{% for topping in toppings %}
+{{ topping.name|linebreaks }}
+{% endfor %}
+
   <ul>
   {% for comment in comments %}
     <div class="card mb-3">

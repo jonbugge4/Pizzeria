@@ -27,6 +27,11 @@ class Comment(models.Model):
     def __str__(self):
         return f"{self.text[:150]}..."
 
+class Image(models.Model):
+    title=models.CharField(max_length=200)
+    image=models.ImageField(upload_to='images')
 
+    def __str__(self):
+        return self.title
 
 # Create your models here.
