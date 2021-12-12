@@ -1,6 +1,12 @@
 {% extends "MainApp/base.html" %}
 
 {% block page_header %}
+
+
+{% if pizza.header_image. %} 
+<img src="{{ pizza.header_image.url }}" class="img-thumbnail" style="max-height: height 200px" alt="">
+{% endif %} 
+
   <div class="jumbotron">
       <h1 class="display-3">Select a Pizza!</h1>
 

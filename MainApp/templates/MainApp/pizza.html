@@ -18,6 +18,10 @@
 </h5>
 {% endfor %}
 
+{% if pizza.header_image. %} 
+<img src="{{ pizza.header_image.url }}" class="img-thumbnail" style="max-height: height 200px" alt="">
+{% endif %} 
+
   <ul>
   {% for comment in comments %}
     <div class="card mb-3">
